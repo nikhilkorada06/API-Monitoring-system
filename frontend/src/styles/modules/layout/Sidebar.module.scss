@@ -1,0 +1,143 @@
+.mobileOverlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(31, 30, 28, 0.18);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 40;
+
+    @media (min-width: 1024px) {
+        display: none;
+    }
+}
+
+.sidebar {
+    position: fixed;
+    top: 1.5rem;
+    left: 1rem;
+    z-index: 40;
+    height: calc(100vh - 3rem);
+    transition: transform 300ms ease-in-out;
+    width: 4.8rem;
+    border-radius: 2rem;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 24px 55px rgba(63, 69, 58, 0.1);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    &.closed {
+        transform: translateX(-130%);
+
+        @media (min-width: 1024px) {
+            transform: translateX(0);
+        }
+    }
+
+    @supports (backdrop-filter: blur(8px)) {
+        background-color: rgba(255, 255, 255, 0.84);
+    }
+}
+
+.sidebarContainer {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 0.75rem 0;
+}
+
+.logoSection {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 4.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.logoIcon {
+    width: 2.7rem;
+    height: 2.7rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #334235;
+
+    svg {
+        width: 1.25rem;
+        height: 1.25rem;
+        color: white;
+    }
+}
+
+.logoText h2 {
+    display: none;
+    margin: 0;
+}
+
+.logoText p {
+    display: none;
+}
+
+.navigation {
+    flex: 1 1 0%;
+    overflow-y: auto;
+    padding: 0.4rem 0.55rem;
+}
+
+.navList {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+}
+
+.navLink {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3.35rem;
+    height: 3.35rem;
+    border-radius: 50%;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: all 200ms ease;
+    text-decoration: none;
+    color: rgba(55, 54, 50, 0.8);
+    background: transparent;
+
+    &:hover {
+        background-color: rgba(109, 126, 110, 0.12);
+        color: #2a2c29;
+    }
+
+    &.active {
+        background-color: #2f3731;
+        color: #f8f6f2;
+        box-shadow: 0 18px 28px rgba(47, 55, 49, 0.22);
+    }
+
+    svg {
+        width: 1.25rem;
+        height: 1.25rem;
+        transition: transform 200ms ease;
+    }
+
+    &:hover svg {
+        transform: scale(1.1);
+    }
+
+    &.active svg {
+        color: #f8f6f2;
+    }
+}
+
+.navItem {
+    display: none;
+}
+
+.bottomNavigation {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+    padding: 0.55rem;
+    align-items: center;
+}

@@ -1,0 +1,76 @@
+.pageContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  animation: fade-in 300ms ease-in-out;
+}
+
+.loadingContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  animation: fade-in 300ms ease-in-out;
+
+  svg {
+    width: 2.5rem;
+    height: 2.5rem;
+    color: #6b8476;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    color: rgba(64, 66, 61, 0.75);
+    margin: 0;
+  }
+}
+
+.errorContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  animation: fade-in 300ms ease-in-out;
+
+  .errorIcon {
+    width: 4rem;
+    height: 4rem;
+    background-color: rgba(183, 118, 96, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+
+    svg {
+      width: 2rem;
+      height: 2rem;
+      color: #b87460;
+    }
+  }
+
+  .errorTitle {
+    font-size: 1.125rem;
+    font-weight: 500;
+    margin: 0 0 0.5rem 0;
+  }
+
+  .errorMessage {
+    font-size: 0.875rem;
+    color: rgba(64, 66, 61, 0.72);
+    margin: 0 0 1rem 0;
+  }
+}
+
+.midGrid,
+.bottomGrid {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 1rem;
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

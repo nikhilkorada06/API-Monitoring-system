@@ -1,0 +1,137 @@
+:root {
+  --background: 41 23% 91%;
+  --foreground: 34 10% 16%;
+  --muted: 37 16% 86%;
+  --muted-foreground: 40 6% 44%;
+  --popover: 44 30% 96%;
+  --popover-foreground: 34 10% 16%;
+  --card: 44 30% 96%;
+  --card-foreground: 34 10% 16%;
+  --border: 36 18% 84%;
+  --input: 36 18% 84%;
+  --primary: 148 10% 39%;
+  --primary-foreground: 44 30% 96%;
+  --secondary: 36 21% 86%;
+  --secondary-foreground: 34 10% 16%;
+  --accent: 36 22% 83%;
+  --accent-foreground: 34 10% 16%;
+  --destructive: 10 45% 46%;
+  --destructive-foreground: 44 30% 96%;
+  --ring: 148 10% 39%;
+  --radius: 0.5rem;
+
+  --theme-background: linear-gradient(
+    135deg,
+    #ece6dc 0%,
+    #f2ede5 50%,
+    #e8e1d5 100%
+  );
+  --theme-logo-bg: linear-gradient(
+    135deg,
+    hsl(148, 10%, 39%),
+    hsl(133, 11%, 50%)
+  );
+  --theme-logo-shadow: 0 8px 25px rgba(94, 116, 101, 0.18);
+  --theme-text-gradient: linear-gradient(
+    135deg,
+    hsl(148, 10%, 32%),
+    hsl(124, 8%, 43%)
+  );
+  --theme-glass-bg: rgba(255, 255, 255, 0.64);
+  --theme-glass-border: rgba(255, 255, 255, 0.25);
+  --theme-glass-strong-bg: rgba(255, 255, 255, 0.82);
+  --theme-glass-strong-border: rgba(255, 255, 255, 0.35);
+}
+
+.theme-light {
+  --background: 41 23% 91%;
+  --foreground: 34 10% 16%;
+  --muted: 37 16% 86%;
+  --muted-foreground: 40 6% 44%;
+  --popover: 44 30% 96%;
+  --popover-foreground: 34 10% 16%;
+  --card: 44 30% 96%;
+  --card-foreground: 34 10% 16%;
+  --border: 36 18% 84%;
+  --input: 36 18% 84%;
+  --primary: 148 10% 39%;
+  --primary-foreground: 44 30% 96%;
+  --secondary: 36 21% 86%;
+  --secondary-foreground: 34 10% 16%;
+  --accent: 36 22% 83%;
+  --accent-foreground: 34 10% 16%;
+  --destructive: 10 45% 46%;
+  --destructive-foreground: 44 30% 96%;
+  --ring: 148 10% 39%;
+
+  --theme-background: linear-gradient(180deg, #efe9e0 0%, #e5ddd2 100%);
+  --theme-logo-bg: linear-gradient(
+    135deg,
+    hsl(148, 10%, 39%),
+    hsl(133, 11%, 50%)
+  );
+  --theme-logo-shadow: 0 4px 15px rgba(94, 116, 101, 0.18);
+  --theme-text-gradient: linear-gradient(
+    135deg,
+    hsl(148, 10%, 32%),
+    hsl(124, 8%, 43%)
+  );
+  --theme-glass-bg: rgba(255, 255, 255, 0.72);
+  --theme-glass-border: rgba(255, 255, 255, 0.28);
+  --theme-glass-strong-bg: rgba(255, 255, 255, 0.88);
+  --theme-glass-strong-border: rgba(255, 255, 255, 0.36);
+}
+
+.theme-purple {
+  --background: 41 23% 91%;
+  --foreground: 34 10% 16%;
+  --card: 44 30% 96%;
+  --card-foreground: 34 10% 16%;
+  --popover: 44 30% 96%;
+  --popover-foreground: 34 10% 16%;
+  --primary: 148 10% 39%;
+  --primary-foreground: 44 30% 96%;
+  --secondary: 36 21% 86%;
+  --secondary-foreground: 34 10% 16%;
+  --muted: 37 16% 86%;
+  --muted-foreground: 40 6% 44%;
+  --accent: 36 22% 83%;
+  --accent-foreground: 34 10% 16%;
+  --destructive: 10 45% 46%;
+  --destructive-foreground: 44 30% 96%;
+  --border: 36 18% 84%;
+  --input: 36 18% 84%;
+  --ring: 148 10% 39%;
+
+  --theme-background: linear-gradient(180deg, #efe9e0 0%, #e5ddd2 100%);
+  --theme-logo-bg: linear-gradient(135deg, hsl(148, 10%, 39%), hsl(133, 11%, 50%));
+  --theme-logo-shadow: 0 8px 25px rgba(94, 116, 101, 0.18);
+  --theme-text-gradient: linear-gradient(135deg, hsl(148, 10%, 32%), hsl(124, 8%, 43%));
+}
+
+.theme-light {
+  --background: 41 23% 91%;
+  --foreground: 34 10% 16%;
+  --card: 44 30% 96%;
+  --card-foreground: 34 10% 16%;
+  --popover: 44 30% 96%;
+  --popover-foreground: 34 10% 16%;
+  --primary: 148 10% 39%;
+  --primary-foreground: 44 30% 96%;
+  --secondary: 36 21% 86%;
+  --secondary-foreground: 34 10% 16%;
+  --muted: 37 16% 86%;
+  --muted-foreground: 40 6% 44%;
+  --accent: 36 22% 83%;
+  --accent-foreground: 34 10% 16%;
+  --destructive: 10 45% 46%;
+  --destructive-foreground: 44 30% 96%;
+  --border: 36 18% 84%;
+  --input: 36 18% 84%;
+  --ring: 148 10% 39%;
+
+  --theme-background: linear-gradient(180deg, #efe9e0 0%, #e5ddd2 100%);
+  --theme-logo-bg: linear-gradient(135deg, hsl(148, 10%, 39%), hsl(133, 11%, 50%));
+  --theme-logo-shadow: 0 8px 25px rgba(94, 116, 101, 0.18);
+  --theme-text-gradient: linear-gradient(135deg, hsl(148, 10%, 32%), hsl(124, 8%, 43%));
+}

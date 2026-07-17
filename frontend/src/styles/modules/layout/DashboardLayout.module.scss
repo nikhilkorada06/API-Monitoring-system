@@ -1,0 +1,224 @@
+.container {
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at top left, rgba(110, 131, 122, 0.18), transparent 24%),
+        radial-gradient(circle at right top, rgba(188, 178, 165, 0.16), transparent 20%),
+        linear-gradient(180deg, #e8e4dc 0%, #ece8e1 48%, #e5dfd5 100%);
+}
+
+.mainContent {
+    padding-left: 0;
+
+    @media (min-width: 1024px) {
+        padding-left: 5rem;
+    }
+}
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 30;
+    padding: 1.25rem 1.5rem 0;
+}
+
+.headerContent {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    min-height: 4.5rem;
+}
+
+.mobileMenuButton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: 999px;
+    border: none;
+    background: rgba(255, 255, 255, 0.55);
+    box-shadow: 0 14px 30px rgba(71, 78, 63, 0.08);
+    cursor: pointer;
+
+    svg {
+        width: 1.2rem;
+        height: 1.2rem;
+        color: #2d2c2a;
+    }
+
+    @media (min-width: 1024px) {
+        display: none;
+    }
+}
+
+.brandBlock {
+    display: none;
+    align-items: center;
+    gap: 0.9rem;
+    min-width: 18rem;
+
+    @media (min-width: 768px) {
+        display: flex;
+    }
+
+    h1 {
+        margin: 0;
+        font-size: 1.55rem;
+        font-weight: 600;
+        letter-spacing: -0.03em;
+        color: #272420;
+    }
+
+    p {
+        margin: 0.2rem 0 0;
+        color: rgba(39, 36, 32, 0.78);
+        font-size: 0.95rem;
+    }
+}
+
+.brandMark {
+    width: 3.2rem;
+    height: 3.2rem;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: rgba(255, 255, 255, 0.55);
+    box-shadow: inset 0 0 0 1px rgba(83, 96, 81, 0.08);
+
+    span {
+        width: 1.55rem;
+        height: 1.55rem;
+        border-radius: 50%;
+        border: 5px solid #67806f;
+        border-top-color: transparent;
+        border-left-color: transparent;
+        transform: rotate(35deg);
+    }
+}
+
+.searchShell {
+    display: none;
+    align-items: center;
+    gap: 0.65rem;
+    flex: 1;
+    max-width: 31rem;
+    height: 3.45rem;
+    padding: 0 1rem 0 1.15rem;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 12px 28px rgba(72, 71, 62, 0.08);
+
+    @media (min-width: 768px) {
+        display: flex;
+    }
+
+    svg {
+        width: 1rem;
+        height: 1rem;
+        color: rgba(58, 57, 53, 0.72);
+    }
+
+    input {
+        width: 100%;
+        border: 0;
+        outline: none;
+        background: transparent;
+        color: #2b2a27;
+        font-size: 0.95rem;
+    }
+}
+
+.actionButtons {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-left: auto;
+}
+
+.iconButton,
+.profileButton,
+.refreshButton {
+    width: 3rem;
+    height: 3rem;
+    border: 0;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.82);
+    box-shadow: 0 12px 26px rgba(71, 78, 63, 0.08);
+    cursor: pointer;
+    position: relative;
+
+    svg {
+        width: 1.1rem;
+        height: 1.1rem;
+        color: #34322f;
+    }
+}
+
+.notificationDot {
+    position: absolute;
+    top: 0.8rem;
+    right: 0.82rem;
+    width: 0.45rem;
+    height: 0.45rem;
+    border-radius: 50%;
+    background: #d33b2f;
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.9);
+}
+
+.refreshButton {
+    svg {
+        color: #161513;
+
+        &.spinning {
+            animation: spin 1s linear infinite;
+        }
+    }
+}
+
+.profileButton {
+    font-size: 1.1rem;
+}
+
+.pageContent {
+    width: 100%;
+    padding: 1.2rem 1.25rem 1.5rem;
+
+    @media (min-width: 768px) {
+        padding: 1.5rem 1.5rem 2rem;
+    }
+}
+
+.contentShell {
+    border-radius: 2rem;
+    background: rgba(239, 236, 229, 0.48);
+    padding: 0.95rem;
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.3);
+}
+
+.contentInner {
+    border-radius: 1.7rem;
+    background: rgba(244, 241, 234, 0.72);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    padding: 1rem;
+}
+
+.statusRow {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    color: rgba(52, 50, 46, 0.65);
+    font-size: 0.82rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}

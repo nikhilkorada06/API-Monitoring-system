@@ -1,0 +1,208 @@
+.container {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    gap: 0.8rem;
+
+    @media (min-width: 768px) {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    @media (min-width: 1024px) {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+}
+
+.statCard {
+    transition: transform 250ms ease, box-shadow 250ms ease;
+    border: 0;
+    background: rgba(255, 255, 255, 0.86);
+    border-radius: 1.35rem;
+    box-shadow: 0 18px 32px rgba(61, 68, 57, 0.08);
+
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 22px 36px rgba(61, 68, 57, 0.12);
+    }
+}
+
+.cardContent {
+    padding: 1.15rem 1.2rem;
+}
+
+.contentLayout {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.textContent {
+    flex: 1 1 0%;
+}
+
+.title {
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: rgba(72, 73, 69, 0.78);
+    margin: 0 0 0.35rem 0;
+}
+
+.value {
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    margin: 0 0 0.2rem 0;
+    color: #2b2a27;
+    background: none;
+    -webkit-text-fill-color: initial;
+}
+
+.subtitle {
+    font-size: 0.76rem;
+    color: rgba(90, 92, 87, 0.7);
+    margin: 0;
+}
+
+.iconContainer {
+    width: 2.8rem;
+    height: 2.8rem;
+    display: grid;
+    place-items: center;
+    border-radius: 999px;
+    transition: transform 300ms ease;
+    flex-shrink: 0;
+
+    .statCard:hover & {
+        transform: scale(1.1);
+    }
+
+    svg {
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+}
+
+.progressBar {
+    margin-top: 0.95rem;
+    height: 0.26rem;
+    width: 100%;
+    border-radius: 9999px;
+    opacity: 0.5;
+    transition: opacity 300ms ease;
+
+    .statCard:hover & {
+        opacity: 1;
+    }
+}
+
+// Gradient color definitions for value text
+.gradientBlue {
+    --tw-gradient-from: #3b82f6;
+    --tw-gradient-to: #06b6d4;
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.gradientPurple {
+    --tw-gradient-from: #a855f7;
+    --tw-gradient-to: #ec4899;
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.gradientRed {
+    --tw-gradient-from: #ef4444;
+    --tw-gradient-to: #f97316;
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.gradientGreen {
+    --tw-gradient-from: #22c55e;
+    --tw-gradient-to: #10b981;
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.gradientIndigo {
+    --tw-gradient-from: #6366f1;
+    --tw-gradient-to: #3b82f6;
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.gradientYellow {
+    --tw-gradient-from: #eab308;
+    --tw-gradient-to: #f97316;
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+// Background colors for icon containers
+.bgBlue {
+    background-color: rgba(101, 139, 127, 0.12);
+}
+
+.bgPurple {
+    background-color: rgba(131, 154, 138, 0.12);
+}
+
+.bgRed {
+    background-color: rgba(203, 131, 110, 0.12);
+}
+
+.bgGreen {
+    background-color: rgba(106, 141, 120, 0.12);
+}
+
+.bgIndigo {
+    background-color: rgba(141, 157, 139, 0.12);
+}
+
+.bgYellow {
+    background-color: rgba(204, 188, 146, 0.18);
+}
+
+// Text colors for icons
+.textBlue {
+    color: #5f7d71;
+}
+
+.textPurple {
+    color: #839d8b;
+}
+
+.textRed {
+    color: #b67159;
+}
+
+.textGreen {
+    color: #65846f;
+}
+
+.textIndigo {
+    color: #8a968c;
+}
+
+.textYellow {
+    color: #b79e63;
+}
+
+// Progress bar backgrounds
+.progressBlue {
+    background: linear-gradient(to right, #6a8879, #8aa090);
+}
+
+.progressPurple {
+    background: linear-gradient(to right, #96a8a0, #7f9585);
+}
+
+.progressRed {
+    background: linear-gradient(to right, #c07f68, #d3a48e);
+}
+
+.progressGreen {
+    background: linear-gradient(to right, #728c76, #95a89a);
+}
+
+.progressIndigo {
+    background: linear-gradient(to right, #87988d, #9fb0a4);
+}
+
+.progressYellow {
+    background: linear-gradient(to right, #c8b583, #dfd1ad);
+}
