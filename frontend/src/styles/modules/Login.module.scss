@@ -1,15 +1,14 @@
+@use "./login/dashboardTheme" as theme;
+
 .container {
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 1rem;
-    background:
-        radial-gradient(circle at top left, rgba(110, 131, 122, 0.16), transparent 24%),
-        radial-gradient(circle at right bottom, rgba(189, 179, 167, 0.18), transparent 24%),
-        linear-gradient(180deg, #e8e4dc 0%, #f0ebe3 100%);
+    padding: 1.25rem;
     position: relative;
     overflow: hidden;
+    @include theme.pageBackground;
 }
 
 .backgroundElements {
@@ -20,113 +19,124 @@
 
 .backgroundOrb {
     position: absolute;
-    width: 20rem;
-    height: 20rem;
+    width: clamp(12rem, 30vw, 20rem);
+    height: clamp(12rem, 30vw, 20rem);
     border-radius: 50%;
     mix-blend-mode: multiply;
-    filter: blur(3rem);
-    opacity: 0.2;
-    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    filter: blur(3.2rem);
+    opacity: 0.18;
+    animation: floatOrb 9s ease-in-out infinite;
 
     &.orb1 {
-        top: -10rem;
-        right: -10rem;
-        background-color: rgba(110, 131, 122, 0.7);
+        top: -8rem;
+        right: -7rem;
+        background-color: rgba(110, 131, 122, 0.68);
     }
 
     &.orb2 {
-        bottom: -10rem;
-        left: -10rem;
-        background-color: rgba(185, 173, 154, 0.7);
-        animation-delay: 1s;
+        bottom: -9rem;
+        left: -8rem;
+        background-color: rgba(190, 178, 161, 0.7);
+        animation-delay: 1.8s;
     }
 
     &.orb3 {
-        top: 10rem;
-        left: 10rem;
-        background-color: rgba(143, 160, 148, 0.7);
-        animation-delay: 2s;
+        top: 35%;
+        left: 8%;
+        background-color: rgba(138, 157, 146, 0.62);
+        animation-delay: 3.2s;
     }
 }
 
 .loginCard {
     width: 100%;
-    max-width: 28rem;
-    background: rgba(255, 255, 255, 0.86);
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
-    border: 0;
-    border-radius: 1.5rem;
-    box-shadow: 0 20px 40px rgba(67, 67, 56, 0.1);
-    animation: fadeIn 0.5s ease-in-out;
+    max-width: 29rem;
+    border-radius: 2rem;
     position: relative;
-    z-index: 10;
+    z-index: 2;
+    padding: 0.95rem;
+    background: rgba(239, 236, 229, 0.48);
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.3);
+    animation: cardEnter 0.5s ease;
+}
+
+.cardHeader,
+.cardContent {
+    border-radius: 1.65rem;
+    @include theme.glassPanel;
 }
 
 .cardHeader {
     display: flex;
     flex-direction: column;
-    gap: 0.75rem;
+    align-items: center;
+    gap: 0.7rem;
     text-align: center;
-    padding: 1.5rem 1.5rem 0;
+    padding: 1.7rem 1.5rem 1.15rem;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
 }
 
 .logoContainer {
-    margin: 0 auto;
-    width: 4rem;
-    height: 4rem;
-    background: #2f3731;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 14px 28px rgba(47, 55, 49, 0.18);
+    width: 4.1rem;
+    height: 4.1rem;
+    @include theme.iconSurface;
 
     svg {
-        width: 2rem;
-        height: 2rem;
-        color: white;
+        width: 1.95rem;
+        height: 1.95rem;
+        color: #f8f6f2;
     }
 }
 
 .title {
-    font-size: 1.875rem;
-    font-weight: 700;
-    color: #2a2926;
     margin: 0;
+    font-size: clamp(1.6rem, 3vw, 1.95rem);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    color: #272420;
+}
+
+.description {
+    margin: 0;
+    font-size: 0.95rem;
+    color: rgba(39, 36, 32, 0.74);
 }
 
 .cardContent {
-    padding: 0 1.5rem 1.5rem;
+    padding: 0.25rem 1.15rem 1.25rem;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
 }
 
 .errorMessage {
-    margin-bottom: 1rem;
-    padding: 0.75rem;
-    border-radius: 0.5rem;
+    margin: 0.55rem 0 0.8rem;
+    padding: 0.72rem 0.85rem;
+    border-radius: 0.75rem;
     background-color: rgba(183, 118, 96, 0.1);
-    border: 1px solid rgba(183, 118, 96, 0.25);
-    color: #b87460;
-    font-size: 0.875rem;
-    animation: fadeIn 0.5s ease-in-out;
+    border: 1px solid rgba(183, 118, 96, 0.28);
+    color: #9d4b37;
+    font-size: 0.84rem;
 }
 
 .form {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 0.95rem;
 }
 
 .inputGroup {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 0.45rem;
 }
 
 .label {
-    font-size: 0.875rem;
-    font-weight: 500;
-    color: hsl(var(--foreground));
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: rgba(39, 36, 32, 0.84);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
 }
 
 .inputContainer {
@@ -134,69 +144,69 @@
 
     svg {
         position: absolute;
-        left: 0.75rem;
+        left: 1rem;
         top: 50%;
         transform: translateY(-50%);
         width: 1rem;
         height: 1rem;
-        color: hsl(var(--muted-foreground));
+        color: rgba(58, 57, 53, 0.65);
     }
 }
 
 .input {
     width: 100%;
-    padding: 0.625rem 0.75rem 0.625rem 2.5rem;
-    border: 1px solid hsl(var(--border));
-    border-radius: 0.375rem;
-    background: hsl(var(--background));
-    color: hsl(var(--foreground));
-    font-size: 0.875rem;
-    transition: all 0.2s ease;
+    height: 3.1rem;
+    padding: 0 0.9rem 0 2.75rem;
+    color: #2b2a27;
+    font-size: 0.92rem;
+    transition: box-shadow 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+    @include theme.pillInput;
 
     &::placeholder {
-        color: hsl(var(--muted-foreground));
+        color: rgba(58, 57, 53, 0.5);
     }
 
     &:focus {
         outline: none;
-        border-color: hsl(var(--ring));
-        box-shadow: 0 0 0 2px rgba(168, 85, 247, 0.2);
+        border-color: rgba(82, 91, 76, 0.45);
+        box-shadow: 0 0 0 4px rgba(102, 125, 112, 0.16);
+        transform: translateY(-1px);
     }
 
     &:disabled {
-        opacity: 0.5;
+        opacity: 0.62;
         cursor: not-allowed;
     }
 }
 
 .submitButton {
     width: 100%;
-    background: linear-gradient(to right, #667d70, #8da095);
-    color: white;
     border: none;
     border-radius: 999px;
-    padding: 0.75rem 1rem;
-    font-size: 0.875rem;
-    font-weight: 500;
+    height: 3.2rem;
+    color: #f9f8f5;
+    font-size: 0.92rem;
+    font-weight: 600;
     cursor: pointer;
-    transition: all 0.2s ease;
-    box-shadow: 0 10px 15px -3px rgba(168, 85, 247, 0.5);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    @include theme.ctaButton;
 
     &:hover:not(:disabled) {
-        background: linear-gradient(to right, #5e7568, #7f9488);
         transform: translateY(-1px);
-        box-shadow: 0 15px 25px -5px rgba(102, 125, 112, 0.25);
     }
 
     &:disabled {
-        opacity: 0.7;
+        opacity: 0.72;
         cursor: not-allowed;
         transform: none;
+        box-shadow: 0 8px 16px rgba(61, 75, 63, 0.18);
     }
 
-    &:focus {
+    &:focus-visible {
         outline: none;
-        box-shadow: 0 0 0 2px hsl(var(--ring));
+        box-shadow:
+            0 0 0 4px rgba(102, 125, 112, 0.2),
+            0 14px 26px rgba(61, 75, 63, 0.24);
     }
 }
 
@@ -213,204 +223,36 @@
 }
 
 .footerText {
-    margin-top: 1rem;
+    margin-top: 0.9rem;
     text-align: center;
-    font-size: 0.875rem;
-    color: hsl(var(--muted-foreground));
+    font-size: 0.84rem;
+    color: rgba(58, 57, 53, 0.66);
 }
 
 .credentialsHighlight {
-    color: hsl(var(--primary));
-    font-weight: 500;
+    color: #3d4b3f;
+    font-weight: 600;
 }
 
-.cardContent {
-    padding: 0 1.5rem 1.5rem;
-}
-
-.errorMessage {
-    margin-bottom: 1rem;
-    padding: 0.75rem;
-    border-radius: 0.5rem;
-    background-color: hsla(0, 84%, 60%, 0.1);
-    border: 1px solid hsla(0, 84%, 60%, 0.5);
-    color: hsl(0, 84%, 70%);
-    font-size: 0.875rem;
-    animation: fadeIn 0.5s ease-in-out;
-}
-
-.form {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-.inputGroup {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
-
-.label {
-    font-size: 0.875rem;
-    font-weight: 500;
-    color: hsl(var(--foreground));
-}
-
-.inputContainer {
-    position: relative;
-
-    svg {
-        position: absolute;
-        left: 0.75rem;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 1rem;
-        height: 1rem;
-        color: hsl(var(--muted-foreground));
-    }
-}
-
-.input {
-    width: 100%;
-    padding: 0.625rem 0.75rem 0.625rem 2.5rem;
-    border: 1px solid hsl(var(--border));
-    border-radius: 0.375rem;
-    background: hsl(var(--background));
-    color: hsl(var(--foreground));
-    font-size: 0.875rem;
-    transition: border-color 0.2s ease;
-
-    &::placeholder {
-        color: hsl(var(--muted-foreground));
-    }
-
-    &:focus {
-        outline: none;
-        border-color: hsl(var(--ring));
-        box-shadow: 0 0 0 2px hsl(var(--ring) 0.2);
-    }
-
-    &:disabled {
-        opacity: 0.5;
-        cursor: not-allowed;
-    }
-}
-
-.submitButton {
-    width: 100%;
-    background: linear-gradient(to right,
-            hsl(265, 82%, 50%),
-            hsl(245, 80%, 55%));
-    color: white;
-    border: none;
-    border-radius: 0.375rem;
-    padding: 0.75rem 1rem;
-    font-size: 0.875rem;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    box-shadow: 0 10px 15px -3px hsla(265, 82%, 50%, 0.5);
-
-    &:hover:not(:disabled) {
-        background: linear-gradient(to right,
-                hsl(265, 82%, 45%),
-                hsl(245, 80%, 50%));
-        transform: translateY(-1px);
-        box-shadow: 0 15px 25px -5px hsla(265, 82%, 50%, 0.6);
-    }
-
-    &:disabled {
-        opacity: 0.7;
-        cursor: not-allowed;
-        transform: none;
-    }
-
-    &:focus {
-        outline: none;
-        box-shadow: 0 0 0 2px hsl(var(--ring));
-    }
-}
-
-.buttonContent {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-
-    svg {
-        width: 1rem;
-        height: 1rem;
-    }
-}
-
-.footerText {
-    margin-top: 1rem;
-    text-align: center;
-    font-size: 0.875rem;
-    color: hsl(var(--muted-foreground));
-}
-
-.credentialsHighlight {
-    color: hsl(var(--primary));
-    font-weight: 500;
-}
-
-/* Light theme adjustments */
-:global(.theme-light) {
+@media (max-width: 768px) {
     .container {
-        background: linear-gradient(to bottom right,
-                hsl(210, 100%, 97%),
-                hsl(220, 50%, 95%),
-                hsl(230, 30%, 93%));
+        padding: 1rem;
     }
 
-    .backgroundOrb {
-        &.orb1 {
-            background-color: hsl(220, 70%, 60%);
-        }
-
-        &.orb2 {
-            background-color: hsl(210, 80%, 65%);
-        }
-
-        &.orb3 {
-            background-color: hsl(200, 75%, 70%);
-        }
+    .loginCard {
+        max-width: 100%;
     }
 
-    .logoContainer {
-        background: linear-gradient(to bottom right,
-                hsl(220, 70%, 45%),
-                hsl(210, 80%, 55%));
-        box-shadow: 0 10px 25px -3px hsla(220, 70%, 45%, 0.3);
+    .cardHeader {
+        padding: 1.35rem 1.1rem 1rem;
     }
 
-    .title {
-        background: linear-gradient(to right,
-                hsl(220, 70%, 50%),
-                hsl(210, 80%, 60%));
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
-
-    .submitButton {
-        background: linear-gradient(to right,
-                hsl(220, 70%, 45%),
-                hsl(210, 80%, 55%));
-        box-shadow: 0 10px 15px -3px hsla(220, 70%, 45%, 0.3);
-
-        &:hover:not(:disabled) {
-            background: linear-gradient(to right,
-                    hsl(220, 70%, 40%),
-                    hsl(210, 80%, 50%));
-            box-shadow: 0 15px 25px -5px hsla(220, 70%, 45%, 0.4);
-        }
+    .cardContent {
+        padding: 0.25rem 1rem 1rem;
     }
 }
 
-@keyframes fadeIn {
+@keyframes cardEnter {
     from {
         opacity: 0;
         transform: translateY(10px);
@@ -422,8 +264,13 @@
     }
 }
 
-@keyframes pulse {
+@keyframes floatOrb {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
     50% {
-        opacity: 0.1;
+        transform: translateY(-14px);
     }
 }
