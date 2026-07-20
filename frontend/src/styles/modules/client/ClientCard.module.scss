@@ -1,6 +1,6 @@
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
     gap: 1.5rem;
 }
 
@@ -10,13 +10,13 @@
 }
 
 .card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-6px);
 }
 
 .content {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1.25rem;
 }
 
 .header {
@@ -33,26 +33,70 @@
 
 .titleSection h3 {
     margin: 0;
+    font-size: 1.15rem;
 }
 
 .titleSection p {
-    margin-top: .3rem;
+    margin-top: .35rem;
     opacity: .7;
     font-size: .9rem;
 }
 
-.footer {
+.info {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+    gap: .9rem;
+
+    padding: 1rem 0;
+
+    border-top: 1px solid rgba(255,255,255,.08);
+    border-bottom: 1px solid rgba(255,255,255,.08);
 }
 
-.date {
+.row {
     display: flex;
-    align-items: center;
-    gap: .5rem;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.row span:first-child {
+    font-weight: 600;
+    opacity: .7;
+}
+
+.row span:last-child {
+    text-align: right;
+    word-break: break-word;
+}
+
+.row a {
+    color: var(--primary);
+    text-decoration: none;
+    text-align: right;
+    word-break: break-word;
+}
+
+.row a:hover {
+    text-decoration: underline;
+}
+
+.description h4 {
+    margin: 0 0 .5rem 0;
+    font-size: .95rem;
+}
+
+.description p {
+    margin: 0;
+
+    line-height: 1.55;
     opacity: .8;
-    font-size: .9rem;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+
+    overflow: hidden;
 }
 
 .empty {

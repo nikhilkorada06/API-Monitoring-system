@@ -71,8 +71,9 @@ function AuthGate() {
             <Suspense fallback={pageFallback}>
                 <Routes>
                     <Route path="/" element={<OverviewPage />} />
-                    <Route path="/settings" element={<SettingsPage />} />
                     <Route path="/clients" element={<ClientManagementPage />} />
+                    <Route path="/apis" element={<div>Coming Soon</div>} />
+                    <Route path="/settings" element={<SettingsPage />} />
                     <Route path="*" element={<Navigate to="/" replace />} />
                 </Routes>
             </Suspense>

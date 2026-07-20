@@ -2,17 +2,31 @@ import { NavLink } from 'react-router-dom';
 import { cn } from '../../lib/utils';
 import {
     LayoutDashboard,
+    Building2,
+    Network,
     Settings,
     Zap,
-} from 'lucide-react';
+} from "lucide-react";
 import styles from '../../styles/modules/layout/Sidebar.module.scss';
 
 const navItems = [
     {
-        title: 'Overview',
-        href: '/',
+        title: "Dashboard",
+        href: "/",
         icon: LayoutDashboard,
-        description: 'Main dashboard view'
+        description: "Main dashboard",
+    },
+    {
+        title: "Client Management",
+        href: "/clients",
+        icon: Building2,
+        description: "Manage clients",
+    },
+    {
+        title: "API Management",
+        href: "/apis",
+        icon: Network,
+        description: "Manage APIs",
     },
 ];
 
