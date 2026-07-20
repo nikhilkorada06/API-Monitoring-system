@@ -11,6 +11,10 @@ router.post('/admin/clients/onboard', (req, res, next) => {
     clientController.MiddlewareToCreateClient(req, res, next);
 });
 
+router.get('/admin/all/clients/:skip', (req, res, next) => {
+    clientController.MiddlewareToGetAllClients(req, res, next);
+});
+
 router.post('/admin/clients/:clientId/users', (req, res, next) => {
     clientController.MiddlewareToCreateClientUser(req, res, next);
 });

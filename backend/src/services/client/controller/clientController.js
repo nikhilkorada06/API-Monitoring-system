@@ -119,4 +119,26 @@ export default class ClientController {
             next(error);
         }
     }
+
+    async MiddlewareToGetAllClients(req, res, next) {
+        try {
+            const isSuperAdmin = await this.authService.checkIfUserIsSuperAdmin(req.user.userId);
+            if(!isSuperAdmin) {
+                return res.status(403).json(ResponseFormatter.error(
+                    '💔💔💔 Only Super Admin can fetch all clients !!!', 
+                    403
+                ));
+            }
+
+            const listOfAllClients = await this.clientService.getAllClients(req.user, req.query.skip);
+
+            return res.status(200).json(ResponseFormatter.success(
+                listOfAllClients, 
+                "🍹🍹🍹 All Clients fetched successfully !!!", 
+                200
+            ));
+        } catch(error) {
+            next(error);
+        }
+    }
 }

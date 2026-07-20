@@ -77,8 +77,10 @@ export const clientApi = {
         const response = await api.post('/admin/clients/onboard', clientData);
         return response.data;
     },
-    getClients: async (params) => {
-        const response = await api.get('/admin/clients', { params });
+    getClients: async (skip = 0) => {
+        const response = await api.get(
+            `/admin/all/clients/${skip}`
+        );
         return response.data;
     },
     createApiKey: async (clientId, keyData) => {

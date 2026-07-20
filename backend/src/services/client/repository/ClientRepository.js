@@ -91,7 +91,7 @@ class MongoClientRepository extends BaseClientRepository {
                 .sort(sort)
                 .skip(skip)
                 .limit(limit)
-                .select('-__v');
+                .select('-__v') // Exclude __v, createdAt, and updatedAt fields;
 
             return clients;
         } catch (error) {

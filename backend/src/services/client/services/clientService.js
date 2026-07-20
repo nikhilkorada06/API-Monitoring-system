@@ -251,6 +251,30 @@ export default class clientService {
             logger.error("😔😔😔 Error fetching client by API key in clientService", error);
             throw error;
         }
+    }
 
+    async getAllClients(adminUser, skip = 0) {
+        try {
+            if(adminUser.role !== APPLICATION_ROLES.SUPER_ADMIN) {
+                throw new AppError('💔💔💔 Access Denied - Only Super Admin can view all clients list !!!', 403);
+            }
+
+            const listOfAllClients = await this.clientRepository.find({}, {
+                skip
+            });
+
+            if(!listOfAllClients || listOfAllClients.length === 0) {
+                throw new AppError('💔💔💔 No clients found in the system !!!', 404);
+            }
+            
+            logger.info("🍹🍹🍹 All Clients fetched successfully", {
+                count: listOfAllClients.length
+            });
+
+            return listOfAllClients;
+        } catch(error) {
+            logger.error("😔😔😔 Error fetching all clients in clientService", error);
+            throw error;
+        }
     }
 }

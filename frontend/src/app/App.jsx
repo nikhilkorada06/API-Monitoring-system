@@ -9,6 +9,11 @@ import { ToastProvider } from '../contexts/ToastContext';
 import ErrorBoundary from '../components/ErrorBoundary';
 
 const OverviewPage = lazy(() => import('../pages/OverviewPage').then(m => ({ default: m.OverviewPage })));
+const ClientManagementPage = lazy(() =>
+    import("../pages/ClientManagementPage").then(m => ({
+        default: m.ClientManagementPage
+    }))
+);
 const SettingsPage = lazy(() => import('../pages/SettingsPage').then(m => ({ default: m.SettingsPage })));
 
 const pageFallback = (
@@ -67,6 +72,7 @@ function AuthGate() {
                 <Routes>
                     <Route path="/" element={<OverviewPage />} />
                     <Route path="/settings" element={<SettingsPage />} />
+                    <Route path="/clients" element={<ClientManagementPage />} />
                     <Route path="*" element={<Navigate to="/" replace />} />
                 </Routes>
             </Suspense>
@@ -89,3 +95,4 @@ function App() {
 }
 
 export default App;
+
